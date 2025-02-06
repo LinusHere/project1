@@ -17,11 +17,7 @@
             padding: 10px 0;
             text-align: center;
         }
-        nav {
-            margin: 0;
-            padding: 10px;
-            background-color: #444;
-        }
+
         nav a {
             color: white;
             margin: 0 15px;
@@ -30,6 +26,58 @@
         nav a:hover {
             text-decoration: underline;
         }
+        /* 导航栏基本样式 */
+        nav {
+            display: flex;
+            background-color: #444;
+            padding: 10px;
+            margin: 0;
+        }
+
+        .nav-item {
+            position: relative; /* 为子菜单定位提供参考 */
+            margin-right: 20px;
+        }
+
+        .nav-item a {
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+            display: block;
+        }
+
+        /* 二级菜单样式 */
+        .submenu {
+            display: none; /* 默认隐藏二级菜单 */
+            position: absolute;
+            top: 100%; /* 在主菜单下方显示 */
+            left: 0;
+            background-color: #444;
+            padding: 0;
+            list-style: none;
+            margin: 0;
+            min-width: 150px; /* 设置二级菜单的最小宽度 */
+        }
+
+        .submenu li {
+            padding: 0;
+        }
+
+        .submenu li a {
+            color: white;
+            padding: 10px;
+            display: block;
+        }
+
+        .submenu li a:hover {
+            background-color: #555; /* 鼠标悬停效果 */
+        }
+
+        /* 鼠标悬停时显示二级菜单 */
+        .nav-item:hover .submenu {
+            display: block;
+        }
+
         main {
             padding: 20px;
         }
@@ -51,14 +99,37 @@
     </header>
 
     <nav>
-        <a href="#home">首页</a>
-            <ul>
+        <div class="nav-item">
+            <a href="#home">首页</a>
+            <ul class="submenu">
                 <li><a href="#home-sub1">子菜单1</a></li>
                 <li><a href="#home-sub2">子菜单2</a></li>
             </ul>
-        <a href="#about">关于我们</a>
-        <a href="#services">服务</a>
-        <a href="#contact">联系我们</a>
+        </div>
+    
+        <div class="nav-item">
+            <a href="#about">关于我们</a>
+            <ul class="submenu">
+                <li><a href="#about-sub1">子菜单1</a></li>
+                <li><a href="#about-sub2">子菜单2</a></li>
+            </ul>
+        </div>
+    
+        <div class="nav-item">
+            <a href="#services">服务</a>
+            <ul class="submenu">
+                <li><a href="#services-sub1">子菜单1</a></li>
+                <li><a href="#services-sub2">子菜单2</a></li>
+            </ul>
+        </div>
+    
+        <div class="nav-item">
+            <a href="#contact">联系我们</a>
+            <ul class="submenu">
+                <li><a href="#contact-sub1">子菜单1</a></li>
+                <li><a href="#contact-sub2">子菜单2</a></li>
+            </ul>
+        </div>
     </nav>
 
     <main>
